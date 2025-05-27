@@ -42,34 +42,34 @@ configure in the usart 2 as asynchronous mode and set the baud rate as 115200 as
 
 
 ## STM 32 CUBE PROGRAM :
-
-
 ```
-#include <main.h>
-#include <stdio.h>
-#if defined(__ICCARM__)||defined(_ARMCC_VERSION)
-#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE*f);
-#elif defined(__GNUC__)
+
+#include "main.h"
+#if defined (_ICCARM) || defined (_ARMCC_VERSION)
+#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f);
+#elif defined(_GNUC_)
 #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
 #endif
-
-  while (1)
+ while (1)
   {
-	  printf("JAGADEESH 212223110015\n");
-	  HAL_Delay(1000);
+    printf("CSE(Cyber Security)\n");
+    HAL_Delay(1000);
+	  /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
   }
 PUTCHAR_PROTOTYPE
 {
-	HAL_UART_Transmit(&huart2, (uint8_t*)&ch,1,0xFFFF);
-		return ch;
 
+  HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
+
+  return ch;
 }
 ```
 ## Output screen shots of Serial port utility   :
  
- ![426902363-2dd339e8-4894-4619-97dd-e7a27a2c7b49](https://github.com/user-attachments/assets/01e071ff-21a3-4f9b-828f-98a1ed871a81)
+ 
+ ![431664621-ffd74120-db9d-4d05-95fa-31f6e308e5cb](https://github.com/user-attachments/assets/fb040247-9cbf-4aea-9f13-324378ab9019)
 
- 
- 
 ## Result :
 configuring and usart is accomplished and string data is visualized on the serial port utilty
